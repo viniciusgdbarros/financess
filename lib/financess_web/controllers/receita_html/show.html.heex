@@ -1,0 +1,17 @@
+<.header>
+  Receita <%= @receita.id %>
+  <:subtitle>Esse é o dado de sua receita mensal.</:subtitle>
+  <:actions>
+    <.link href={~p"/receitas/#{@receita}/edit"}>
+      <.button>Editar receita</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Salario"><%= @receita.salario %></:item>
+  <:item title="Renda extra"><%= @receita.rendaextra %></:item>
+  <:item title="Total"><%= @receita.total %></:item>
+</.list>
+
+<.back navigate={~p"/receitas"}>Voltar para receita</.back>

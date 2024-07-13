@@ -1,0 +1,23 @@
+<.header>
+  Listing Saldos
+  <:actions>
+    <.link href={~p"/saldos/new"}>
+      <.button>New Saldoo</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="saldos" rows={@saldos} row_click={&JS.navigate(~p"/saldos/#{&1}")}>
+  <:col :let={saldoo} label="Saldoresultante"><%= saldoo.saldoresultante %></:col>
+  <:action :let={saldoo}>
+    <div class="sr-only">
+      <.link navigate={~p"/saldos/#{saldoo}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/saldos/#{saldoo}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={saldoo}>
+    <.link href={~p"/saldos/#{saldoo}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

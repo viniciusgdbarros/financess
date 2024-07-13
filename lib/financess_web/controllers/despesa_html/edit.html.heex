@@ -1,0 +1,8 @@
+<.header>
+  Edit Despesa <%= @despesa.id %>
+  <:subtitle>Edite os dados de sua despesa.</:subtitle>
+</.header>
+
+<.despesa_form changeset={@changeset} action={~p"/despesas/#{@despesa}"} />
+
+<.back navigate={~p"/despesas"}>Voltar para despesas</.back>

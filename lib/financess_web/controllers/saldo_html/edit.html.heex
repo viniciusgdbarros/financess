@@ -1,0 +1,8 @@
+<.header>
+  alterar Saldo <%= @saldo.id %>
+  <:subtitle>Altere os dados do seu saldo.</:subtitle>
+</.header>
+
+<.saldo_form changeset={@changeset} action={~p"/saldototal/#{@saldo}"} />
+
+<.back navigate={~p"/saldototal"}>Back to saldototal</.back>

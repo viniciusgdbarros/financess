@@ -1,0 +1,15 @@
+<.header>
+  Saldoo <%= @saldoo.id %>
+  <:subtitle>This is a saldoo record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/saldos/#{@saldoo}/edit"}>
+      <.button>Edit saldoo</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Saldoresultante"><%= @saldoo.saldoresultante %></:item>
+</.list>
+
+<.back navigate={~p"/saldos"}>Back to saldos</.back>

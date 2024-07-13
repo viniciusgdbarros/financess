@@ -1,0 +1,17 @@
+<.header>
+  Saldo <%= @saldo.id %>
+  <:subtitle>This is a saldo record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/saldo total/#{@saldo}/edit"}>
+      <.button>Editar saldo</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Receita mensal"><%= @saldo.receita_mensal %></:item>
+  <:item title="Despesa mensal"><%= @saldo.despesa_mensal %></:item>
+  <:item title="Saldo mensal"><%= @saldo.saldo_mensal %></:item>
+</.list>
+
+<.back navigate={~p"/saldototal"}>Back to saldototal</.back>

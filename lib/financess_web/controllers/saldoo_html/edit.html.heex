@@ -1,0 +1,8 @@
+<.header>
+  Edit Saldoo <%= @saldoo.id %>
+  <:subtitle>Use this form to manage saldoo records in your database.</:subtitle>
+</.header>
+
+<.saldoo_form changeset={@changeset} action={~p"/saldos/#{@saldoo}"} />
+
+<.back navigate={~p"/saldos"}>Back to saldos</.back>

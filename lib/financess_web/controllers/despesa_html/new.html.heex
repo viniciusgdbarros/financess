@@ -1,0 +1,8 @@
+<.header>
+  Nova Despesa
+  <:subtitle>Insira uma nova despesa.</:subtitle>
+</.header>
+
+<.despesa_form changeset={@changeset} action={~p"/despesas"} />
+
+<.back navigate={~p"/despesas"}>Voltar para despesas</.back>

@@ -1,0 +1,31 @@
+<.header>
+  Despesas
+  <:actions>
+    <.link href={~p"/despesas/new"}>
+      <.button>Inserir Despesa</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="despesas" rows={@despesas} row_click={&JS.navigate(~p"/despesas/#{&1}")}>
+  <:col :let={despesa} label="Despesa"><%= despesa.gasto %></:col>
+  <:col :let={despesa} label="Valor"><%= despesa.valor %></:col>
+  <:col :let={despesa} label="Parcela"><%= despesa.parcela %></:col>
+  <:col :let={despesa} label="Valor final"><%= despesa.valorfinal %></:col>
+  <:action :let={despesa}>
+    <div class="sr-only">
+      <.link navigate={~p"/despesas/#{despesa}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/despesas/#{despesa}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={despesa}>
+    <.link href={~p"/despesas/#{despesa}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>
+<!-- Seção para exibir o valor total das despesas -->
+<div>
+  Total das Despesas mensais: R$ <%= @total_valorfinal %>
+</div>
+<.back navigate={~p"/"}>Voltar para o início</.back>

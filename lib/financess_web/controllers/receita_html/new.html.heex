@@ -1,0 +1,8 @@
+<.header>
+  Receita
+  <:subtitle>Insira os dados de sua receita.</:subtitle>
+</.header>
+
+<.receita_form changeset={@changeset} action={~p"/receitas"} />
+
+<.back navigate={~p"/receitas"}>Voltar para receita</.back>

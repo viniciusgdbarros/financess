@@ -1,0 +1,18 @@
+<.header>
+  Despesa <%= @despesa.id %>
+  <:subtitle>Esse é o dado de sua despesa.</:subtitle>
+  <:actions>
+    <.link href={~p"/despesas/#{@despesa}/edit"}>
+      <.button>Editar despesa</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Despesa"><%= @despesa.gasto %></:item>
+  <:item title="Valor"><%= @despesa.valor %></:item>
+  <:item title="Parcela"><%= @despesa.parcela %></:item>
+  <:item title="Valor final"><%= @despesa.valorfinal %></:item>
+</.list>
+
+<.back navigate={~p"/despesas"}>Voltar para despesas</.back>

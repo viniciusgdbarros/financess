@@ -1,0 +1,27 @@
+<.header>
+ Saldo total
+  <:actions>
+    <.link href={~p"/saldototal/new"}>
+      <.button>Verificar Saldo</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="saldototal" rows={@saldototal} row_click={&JS.navigate(~p"/saldototal/#{&1}")}>
+  <:col :let={saldo} label="Receita mensal"><%= saldo.receita_mensal %></:col>
+  <:col :let={saldo} label="Despesa mensal"><%= saldo.despesa_mensal %></:col>
+  <:col :let={saldo} label="Saldo mensal"><%= saldo.saldo_mensal %></:col>
+  <:action :let={saldo}>
+    <div class="sr-only">
+      <.link navigate={~p"/saldototal/#{saldo}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/saldototal/#{saldo}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={saldo}>
+    <.link href={~p"/saldototal/#{saldo}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>
+ 
+<.back navigate={~p"/"}>Voltar para o início</.back>

@@ -1,0 +1,8 @@
+<.header>
+  Editar Receita <%= @receita.id %>
+  <:subtitle>Edite os dados de sua receita.</:subtitle>
+</.header>
+
+<.receita_form changeset={@changeset} action={~p"/receitas/#{@receita}"} />
+
+<.back navigate={~p"/receitas"}>Voltar para receita</.back>

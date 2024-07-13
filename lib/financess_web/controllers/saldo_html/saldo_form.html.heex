@@ -1,0 +1,11 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input field={f[:receita_mensal]} type="number" label="Receita mensal" />
+  <.input field={f[:despesa_mensal]} type="number" label="Despesa mensal" />
+  <.input field={f[:saldo_mensal]} type="number" label="Saldo mensal" />
+  <:actions>
+    <.button>Salvar Saldo</.button>
+  </:actions>
+</.simple_form>
